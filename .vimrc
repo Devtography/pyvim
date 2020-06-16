@@ -38,6 +38,7 @@ filetype plugin indent on   " required
 
 " Non-plugin settings after this line
 syntax on               " enable syntax highlighting
+colorscheme desert      " set `desert` as default colour scheme
 set autoindent          " indent when moving to the next while writing code
 set encoding=utf-8      " show output in UTF-8 as YouCompleteMe requires
 set expandtab           " expand tabs into spaces
