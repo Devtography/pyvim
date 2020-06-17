@@ -70,6 +70,16 @@ set foldlevel=99
 " enable folding with spacebar
 nnoremap <space> za
 
+" plugin settings - NERDTree
+map <C-\> :NERDTreeToggle<CR>
+
+" plugin settings - NERD Commenter
+map <C-_> <leader>ci
+map <D-_> <leader>ci
+map <C-/> <leader>ci
+
+let g:NERDSpaceDelims=1
+
 " plugin settings - SimpylFold
 let g:SimpylFold_docstring_preview=1
 
@@ -78,13 +88,6 @@ set noshowmode          " get rid of the redundant -- INSERT --
 if !has('gui_running')
     set t_Co=256
 endif
-
-" plugin settings - NERD Commenter
-map <C-_> <leader>ci
-map <D-_> <leader>ci
-map <C-/> <leader>ci
-
-let g:NERDSpaceDelims=1
 
 " plugin settings - YouCompleteMe
 let g:ycm_semantic_triggers={ 'python': [ 're!\w{1}' ] }
