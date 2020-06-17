@@ -24,7 +24,7 @@ RUN apt-get update \
     && pip install pipenv pylint yapf
 
 # Install & setup development tools
-COPY .vimrc /root/.vimrc
+COPY ../.vimrc /root/.vimrc
 RUN apt-get install -y build-essential cmake curl git git-flow vim \
     && git clone https://github.com/VundleVim/Vundle.vim.git \
     /root/.vim/bundle/Vundle.vim \
