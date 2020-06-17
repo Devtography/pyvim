@@ -50,7 +50,7 @@ Contributions via pull requests are welcome and encouraged :)
 pyvim is licensed under the [Apache License, Version 2.0](LICENSE.md).
 
 [Vim]: https://www.vim.org
-[Vundle]: https://github.com/VundleVim/Vundle.vim
+[Vundle.vim]: https://github.com/VundleVim/Vundle.vim
 [NERDTree]: https://github.com/preservim/nerdtree
 [NERD Commenter]: https://github.com/preservim/nerdcommenter
 [YouCompleteMe]: https://github.com/ycm-core/YouCompleteMe
@@ -60,6 +60,7 @@ pyvim is licensed under the [Apache License, Version 2.0](LICENSE.md).
 [syntastic]: https://github.com/vim-syntastic/syntastic
 [auto-pairs]: https://github.com/jiangmiao/auto-pairs
 [Blink]: https://blink.sh
+[Vundle]: https://github.com/VundleVim/Vundle.vim
 [latest]: https://github.com/Devtography/pyvim/blob/master/docker/Dockerfile
 [py3.8]: https://github.com/Devtography/pyvim/blob/master/docker/Dockerfile
 [py3.8-focal]: https://github.com/Devtography/pyvim/blob/master/docker/Dockerfile
