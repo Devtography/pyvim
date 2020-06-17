@@ -1,0 +1,39 @@
+# VIM based Python IDE image on Ubuntu 20.04.
+FROM ubuntu:20.04
+
+LABEL \
+    maintainer="Wing Chau <wing@devtography.com>" \
+    description="VIM based Python IDE on Ubuntu 20.04." \
+    python-verion="3.7.7" \
+    license="Apache License 2.0"
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Get the essential updates & packages
+RUN apt-get update && apt-get upgrade -y && apt-get clean \
+    && apt-get install -y software-properties-common \
+    && add-apt-repository ppa:deadsnakes/ppa \
+    && apt-get remove -y software-properties-common \
+    && apt-get autoremove -y \
+    && apt-get clean
+
+# Install Python3.7 & relative packages
+RUN apt-get update \
+    && apt-get install -y python3.7 python3.7-dev python3.7-venv \
+    && apt-get clean \
+    && ln -s /usr/bin/python3.7 /usr/bin/python3 \
+    && ln -s /usr/bin/python3 /usr/bin/python \
+    && python3.7 -m ensurepip --default-pip \
+    && pip install --upgrade pip \
+    && pip install pipenv pylint yapf
+
+# Install & setup development tools
+COPY .vimrc /root/.vimrc
+RUN apt-get install -y build-essential cmake curl git git-flow vim \
+    && git clone https://github.com/VundleVim/Vundle.vim.git \
+    /root/.vim/bundle/Vundle.vim \
+    && vim +PluginInstall +qall \
+    && /root/.vim/bundle/YouCompleteMe/install.py --clangd-completer
+
+CMD ["bash"]
+
