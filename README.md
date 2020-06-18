@@ -14,7 +14,7 @@ Included Vim plugins:
 - [SimpylFold] - cold folding for Python
 - [lightline.vim] - statusline/tabline
 - [fugitive.vim] - git integration
-- [syntastic] - syntax check
+- [Asynchronous Lint Engine] \(a.k.a. ALE) - linting
 - [auto-pairs] - auto generates surround pairs
 
 pyvim is good for remote Python development with iPad via `ssh`/`mosh` as 
@@ -57,7 +57,7 @@ pyvim is licensed under the [Apache License, Version 2.0](LICENSE.md).
 [SimpylFold]: https://github.com/tmhedberg/SimpylFold
 [lightline.vim]: https://github.com/itchyny/lightline.vim 
 [fugitive.vim]: https://github.com/tpope/vim-fugitive
-[syntastic]: https://github.com/vim-syntastic/syntastic
+[Asynchronous Lint Engine]: https://github.com/dense-analysis/ale
 [auto-pairs]: https://github.com/jiangmiao/auto-pairs
 [Blink]: https://blink.sh
 [Vundle]: https://github.com/VundleVim/Vundle.vim

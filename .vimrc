@@ -20,7 +20,7 @@ Plugin 'itchyny/lightline.vim'
 " git integration
 Plugin 'tpope/vim-fugitive'
 " syntax check
-Plugin 'vim-syntastic/syntastic'
+Plugin 'dense-analysis/ale'
 " auto generates surround pairs
 Plugin 'jiangmiao/auto-pairs'
 
@@ -51,10 +51,7 @@ set shiftwidth=4        " shift lines by 4 spaces for indent
 set showmatch           " show the matching part of the pair for [] {} & ()
 set softtabstop=4       " for easier backspacing the soft tabs
 set tabstop=4           " set tabs to have 4 spaces
-set tws=20x0            " set terminal windows size
-
-highlight cursorcolumn cterm=NONE ctermbg=darkgrey ctermfg=white
-    \ guibg=darkgrey guifg=white
+set tws=15x0            " set terminal windows size
 
 " split layout
 set splitbelow
@@ -72,13 +69,25 @@ set foldlevel=99
 " enable folding with spacebar
 nnoremap <space> za
 
+" highlight unneccessary whitespaces
+highlight BadWhitespace ctermbg=yellow guibg=yellow
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match
+    \ BadWhitespace /\s\+$/
+
+" hide colorcolumn in non-editor windows
+au FileType fugitive,help,qf setlocal nonumber colorcolumn=
+au BufEnter * if &ft == '' | setlocal nonumber colorcolumn= | endif
+
+" enable all Python syntax highlighting features
+let python_highlight_all=1
+
 " plugin settings - NERDTree
 map <C-\> :NERDTreeToggle<CR>
 " open NERDTree automatically when vim starts up with no file specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && ! exists("s:std_in") | NERDTree | endif
 " close vim if the only window left open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree")
     \ && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1    " show hidden file by default
 let NERDTreeIgnore=['.git$[[dir]]', '.swp', '.DS_Store']
@@ -103,22 +112,8 @@ endif
 let g:ycm_semantic_triggers={ 'python': [ 're!\w{1}' ] }
 let g:ycm_autoclose_preview_window_after_completion=1
 
-" plugin settings - syntasatic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=0
-let g:syntastic_python_checkers=['pylint']
-
-" enable all Python syntax highlighting features
-let python_highlight_all=1
-
-" highlight unneccessary whitespaces
-highlight BadWhitespace ctermbg=yellow guibg=yellow
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match
-    \ BadWhitespace /\s\+$/
-
+" plugin settings - ale
+let g:ale_linters={ 'python': ['pylint'] }
+let g:ale_fixers={ 'python': ['yapf'] }
+let g:ale_open_list=1
+let g:ale_linters_explicit=1
