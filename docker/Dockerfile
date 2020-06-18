@@ -21,11 +21,11 @@ RUN apt-get update \
     && apt-get clean \
     && ln -s /usr/bin/python3 /usr/bin/python \
     && pip install setuptools \
-    && pip install pipenv pylint yapf
+    && pip install pipenv==2018.11.26 pylint yapf
 
 # Install & setup development tools
 COPY .vimrc /root/.vimrc
-RUN apt-get install -y build-essential cmake curl git git-flow vim \
+RUN apt-get install -y build-essential cmake curl git git-flow iputils-ping vim \
     && git clone https://github.com/VundleVim/Vundle.vim.git \
     /root/.vim/bundle/Vundle.vim \
     && vim +PluginInstall +qall \
