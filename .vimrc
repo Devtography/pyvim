@@ -51,7 +51,7 @@ set shiftwidth=4        " shift lines by 4 spaces for indent
 set showmatch           " show the matching part of the pair for [] {} & ()
 set softtabstop=4       " for easier backspacing the soft tabs
 set tabstop=4           " set tabs to have 4 spaces
-set tws=20x0            " set terminal windows size
+set tws=15x0            " set terminal windows size
 
 " split layout
 set splitbelow
