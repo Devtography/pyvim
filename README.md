@@ -9,13 +9,14 @@ development.
 Included Vim plugins:
 - [Vundle.vim] - plugins management
 - [NERDTree] - tree file explore
-- [NERD Commenter] - code comment
+- [nerdtree-git-plugin] - plugin of [NERDTree] showing git status flags
+- [NERD Commenter] - powerful code comment tool
 - [YouCompleteMe] - code completion
 - [SimpylFold] - cold folding for Python
 - [lightline.vim] - statusline/tabline
 - [fugitive.vim] - git integration
 - [Asynchronous Lint Engine] \(a.k.a. ALE) - linting
-- [auto-pairs] - auto generates surround pairs
+- [vim-gitgutter] - shows git diff in the sign column
 
 pyvim is good for remote Python development with iPad via `ssh`/`mosh` as 
 plugins & settings preconfigured in `.vimrc` are fully tested on the iPad 
@@ -52,13 +53,14 @@ pyvim is licensed under the [Apache License, Version 2.0](LICENSE.md).
 [Vim]: https://www.vim.org
 [Vundle.vim]: https://github.com/VundleVim/Vundle.vim
 [NERDTree]: https://github.com/preservim/nerdtree
+[nerdtree-git-plugin]: https://github.com/Xuyuanp/nerdtree-git-plugin
 [NERD Commenter]: https://github.com/preservim/nerdcommenter
 [YouCompleteMe]: https://github.com/ycm-core/YouCompleteMe
 [SimpylFold]: https://github.com/tmhedberg/SimpylFold
 [lightline.vim]: https://github.com/itchyny/lightline.vim 
 [fugitive.vim]: https://github.com/tpope/vim-fugitive
 [Asynchronous Lint Engine]: https://github.com/dense-analysis/ale
-[auto-pairs]: https://github.com/jiangmiao/auto-pairs
+[vim-gitgutter]: https://github.com/airblade/vim-gitgutter
 [Blink]: https://blink.sh
 [Vundle]: https://github.com/VundleVim/Vundle.vim
 [latest]: https://github.com/Devtography/pyvim/blob/master/docker/Dockerfile
