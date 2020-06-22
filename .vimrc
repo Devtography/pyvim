@@ -79,6 +79,7 @@ nnoremap <C-H> <C-W><C-H>
 " code folding
 set foldmethod=indent
 set foldlevel=99
+
 " enable folding with spacebar
 nnoremap <space> za
 
@@ -92,7 +93,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match
 
 " hide colorcolumn in non-editor windows
 au FileType fugitive,help,qf setlocal nonumber colorcolumn=
-au BufEnter * if &ft == '' | setlocal nonumber colorcolumn= | endif
+au BufAdd * if &previewwindow | set nonumber colorcolumn= | endif
 
 " enable all Python syntax highlighting features
 let python_highlight_all=1
