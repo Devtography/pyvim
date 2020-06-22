@@ -24,8 +24,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 " syntax check
 Plugin 'dense-analysis/ale'
-" auto generates surround pairs
-Plugin 'jiangmiao/auto-pairs'
 
 " All of the plugins must be added before the following line
 call vundle#end()           " required
