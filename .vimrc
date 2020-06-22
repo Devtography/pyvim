@@ -55,6 +55,7 @@ set shell=bash          " set bash as default terminal
 set showmatch           " show the matching part of the pair for [] {} & ()
 set softtabstop=4       " for easier backspacing the soft tabs
 set tabstop=4           " set tabs to have 4 spaces
+set timeoutlen=100      " reduce mapping & keycode delay for sanppy responses
 set tws=15x0            " set terminal windows size
 set updatetime=100      " reduce Vim default delay time from 4000ms to 100ms
 
