@@ -4,11 +4,12 @@ filetype off                " required
 " set the runtime path to include Vundle and initialise
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " tree file explore
 Plugin 'preservim/nerdtree'
+" git status flags on NERDTree
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " code comment
 Plugin 'preservim/nerdcommenter'
 " auto complete
