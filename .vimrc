@@ -19,6 +19,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'itchyny/lightline.vim'
 " git integration
 Plugin 'tpope/vim-fugitive'
+" indicates which lines have been modified in editor window
+Plugin 'airblade/vim-gitgutter'
 " syntax check
 Plugin 'dense-analysis/ale'
 " auto generates surround pairs
@@ -53,6 +55,7 @@ set showmatch           " show the matching part of the pair for [] {} & ()
 set softtabstop=4       " for easier backspacing the soft tabs
 set tabstop=4           " set tabs to have 4 spaces
 set tws=15x0            " set terminal windows size
+set updatetime=100      " reduce Vim default delay time from 4000ms to 100ms
 
 " allow backspacing over everthing in insert mode
 set backspace=indent,eol,start
@@ -125,3 +128,9 @@ let g:ale_linters={ 'python': ['pylint'] }
 let g:ale_fixers={ 'python': ['yapf'] }
 let g:ale_open_list=1
 let g:ale_linters_explicit=1
+
+" plugin settings - vim-gitgutter
+highlight! link SignColumn LineNr
+highlight GitGutterAdd ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
