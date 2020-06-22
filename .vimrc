@@ -49,6 +49,7 @@ set encoding=utf-8      " show output in UTF-8 as YouCompleteMe requires
 set expandtab           " expand tabs into spaces
 set fileencoding=utf-8  " save file with UTF-8 encoding
 set fileformat=unix     " save file with LF line endings
+set hlsearch            " highlight the search results
 set laststatus=2        " show the statusline/tabline
 set number              " show line numbers
 set shiftwidth=4        " shift lines by 4 spaces for indent
@@ -86,6 +87,9 @@ nnoremap <space> za
 
 " prevents `ftplugin` to enforce the textwidth while editing commit msg
 au FileType gitcommit setlocal textwidth=0
+
+" highlight colour for search results
+highlight Search ctermbg=LightYellow ctermfg=DarkGrey
 
 " highlight unneccessary whitespaces
 highlight BadWhitespace ctermbg=yellow guibg=yellow
