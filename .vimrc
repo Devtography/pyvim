@@ -82,6 +82,9 @@ set foldlevel=99
 " enable folding with spacebar
 nnoremap <space> za
 
+" prevents `ftplugin` to enforce the textwidth while editing commit msg
+au FileType gitcommit setlocal textwidth=0
+
 " highlight unneccessary whitespaces
 highlight BadWhitespace ctermbg=yellow guibg=yellow
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match
