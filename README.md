@@ -9,7 +9,7 @@ development.
 Included Vim plugins:
 - [Vundle.vim] - plugins management
 - [NERDTree] - tree file explore
-- [nerd-tree-git-plugin] - plugin of [NERDTree] showing git status flags
+- [nerdtree-git-plugin] - plugin of [NERDTree] showing git status flags
 - [NERD Commenter] - powerful code comment tool
 - [YouCompleteMe] - code completion
 - [SimpylFold] - cold folding for Python
