@@ -12,6 +12,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 to line numbers in editor windows.
 - Vim plugin `Xuyuanp/nerdtree-git-plugin` to show Git status flags on NERDTree.
 - Highlight on search result & custom highlight colour.
+- Added global git config `credential.helper cache` for macOS user as
+`osxkeychain` is not available on Linux.
 
 ### Changed
 - Default shell for Vim to `bash`.
