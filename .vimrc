@@ -44,6 +44,7 @@ syntax on               " enable syntax highlighting
 colorscheme desert      " set `desert` as default colour scheme
 set autoindent          " indent when moving to the next while writing code
 set colorcolumn=80      " show 80 line indicator
+set cursorline          " show cursorline by default
 set encoding=utf-8      " show output in UTF-8 as YouCompleteMe requires
 set expandtab           " expand tabs into spaces
 set fileencoding=utf-8  " save file with UTF-8 encoding
