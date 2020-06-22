@@ -48,6 +48,7 @@ set fileformat=unix     " save file with LF line endings
 set laststatus=2        " show the statusline/tabline
 set number              " show line numbers
 set shiftwidth=4        " shift lines by 4 spaces for indent
+set shell=bash          " set bash as default terminal
 set showmatch           " show the matching part of the pair for [] {} & ()
 set softtabstop=4       " for easier backspacing the soft tabs
 set tabstop=4           " set tabs to have 4 spaces
