@@ -54,6 +54,10 @@ set softtabstop=4       " for easier backspacing the soft tabs
 set tabstop=4           " set tabs to have 4 spaces
 set tws=15x0            " set terminal windows size
 
+" auto-switch between case-sensitive & case-insensitive search
+set ignorecase
+set smartcase
+
 " split layout
 set splitbelow
 set splitright
