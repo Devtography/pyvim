@@ -4,11 +4,12 @@ filetype off                " required
 " set the runtime path to include Vundle and initialise
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " tree file explore
 Plugin 'preservim/nerdtree'
+" git status flags on NERDTree
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " code comment
 Plugin 'preservim/nerdcommenter'
 " auto complete
@@ -19,10 +20,10 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'itchyny/lightline.vim'
 " git integration
 Plugin 'tpope/vim-fugitive'
+" indicates which lines have been modified in editor window
+Plugin 'airblade/vim-gitgutter'
 " syntax check
 Plugin 'dense-analysis/ale'
-" auto generates surround pairs
-Plugin 'jiangmiao/auto-pairs'
 
 " All of the plugins must be added before the following line
 call vundle#end()           " required
@@ -41,17 +42,29 @@ syntax on               " enable syntax highlighting
 colorscheme desert      " set `desert` as default colour scheme
 set autoindent          " indent when moving to the next while writing code
 set colorcolumn=80      " show 80 line indicator
+set cursorline          " show cursorline by default
 set encoding=utf-8      " show output in UTF-8 as YouCompleteMe requires
 set expandtab           " expand tabs into spaces
 set fileencoding=utf-8  " save file with UTF-8 encoding
 set fileformat=unix     " save file with LF line endings
+set hlsearch            " highlight the search results
 set laststatus=2        " show the statusline/tabline
 set number              " show line numbers
 set shiftwidth=4        " shift lines by 4 spaces for indent
+set shell=bash          " set bash as default terminal
 set showmatch           " show the matching part of the pair for [] {} & ()
 set softtabstop=4       " for easier backspacing the soft tabs
 set tabstop=4           " set tabs to have 4 spaces
+set timeoutlen=100      " reduce mapping & keycode delay for sanppy responses
 set tws=15x0            " set terminal windows size
+set updatetime=100      " reduce Vim default delay time from 4000ms to 100ms
+
+" allow backspacing over everthing in insert mode
+set backspace=indent,eol,start
+
+" auto-switch between case-sensitive & case-insensitive search
+set ignorecase
+set smartcase
 
 " split layout
 set splitbelow
@@ -66,8 +79,15 @@ nnoremap <C-H> <C-W><C-H>
 " code folding
 set foldmethod=indent
 set foldlevel=99
+
 " enable folding with spacebar
 nnoremap <space> za
+
+" prevents `ftplugin` to enforce the textwidth while editing commit msg
+au FileType gitcommit setlocal textwidth=0
+
+" highlight colour for search results
+highlight Search ctermbg=LightYellow ctermfg=DarkGrey
 
 " highlight unneccessary whitespaces
 highlight BadWhitespace ctermbg=yellow guibg=yellow
@@ -76,7 +96,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match
 
 " hide colorcolumn in non-editor windows
 au FileType fugitive,help,qf setlocal nonumber colorcolumn=
-au BufEnter * if &ft == '' | setlocal nonumber colorcolumn= | endif
+au BufAdd * if &previewwindow | set nonumber colorcolumn= | endif
 
 " enable all Python syntax highlighting features
 let python_highlight_all=1
@@ -117,3 +137,9 @@ let g:ale_linters={ 'python': ['pylint'] }
 let g:ale_fixers={ 'python': ['yapf'] }
 let g:ale_open_list=1
 let g:ale_linters_explicit=1
+
+" plugin settings - vim-gitgutter
+highlight! link SignColumn LineNr
+highlight GitGutterAdd ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1

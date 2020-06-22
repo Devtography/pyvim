@@ -29,7 +29,8 @@ RUN apt-get install -y build-essential cmake curl git git-flow iputils-ping vim 
     && git clone https://github.com/VundleVim/Vundle.vim.git \
     /root/.vim/bundle/Vundle.vim \
     && vim +PluginInstall +qall \
-    && /root/.vim/bundle/YouCompleteMe/install.py --clangd-completer
+    && /root/.vim/bundle/YouCompleteMe/install.py --clangd-completer \
+    && git config --global credentail.helper cache
 
 CMD ["bash"]
 
